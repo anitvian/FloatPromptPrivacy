@@ -1,34 +1,261 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FloatPrompt Privacy Policy</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Courier New', monospace;
+      background: linear-gradient(135deg, #0a0e27 0%, #1a0a3e 50%, #2d0a4e 100%);
+      color: #e0e6ff;
+      line-height: 1.8;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* Animated background elements */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 0, 136, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+      animation: drift 15s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes drift {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(20px, -20px); }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 30px;
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3.5em;
+      margin-bottom: 10px;
+      background: linear-gradient(120deg, #ff00ff, #00ffff, #ff00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 30px rgba(255, 0, 255, 0.5);
+      letter-spacing: 2px;
+      animation: glow 3s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 0, 255, 0.5)); }
+      50% { filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.8)); }
+    }
+
+    .last-modified {
+      color: #00ffff;
+      font-size: 0.9em;
+      font-style: italic;
+      margin-top: 15px;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+
+    .divider {
+      width: 200px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #ff00ff, #00ffff, transparent);
+      margin: 30px auto;
+      box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+    }
+
+    h2 {
+      font-size: 1.8em;
+      margin-top: 50px;
+      margin-bottom: 25px;
+      color: #00ffff;
+      text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+      border-left: 4px solid #ff00ff;
+      padding-left: 20px;
+      letter-spacing: 1px;
+    }
+
+    section {
+      margin-bottom: 40px;
+      padding: 25px;
+      background: rgba(20, 10, 50, 0.4);
+      border: 1px solid rgba(255, 0, 255, 0.2);
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+      box-shadow: inset 0 0 20px rgba(255, 0, 255, 0.1), 0 0 20px rgba(255, 0, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    section:hover {
+      border-color: rgba(255, 0, 255, 0.4);
+      box-shadow: inset 0 0 20px rgba(255, 0, 255, 0.15), 0 0 30px rgba(255, 0, 255, 0.2);
+    }
+
+    p {
+      margin-bottom: 15px;
+      font-size: 1.05em;
+      letter-spacing: 0.5px;
+    }
+
+    ul {
+      list-style: none;
+      margin-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 15px;
+      padding-left: 30px;
+      position: relative;
+      font-size: 1.05em;
+    }
+
+    ul li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #ff00ff;
+      font-size: 1.5em;
+      text-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+    }
+
+    .contact-section {
+      background: linear-gradient(135deg, rgba(255, 0, 255, 0.1), rgba(0, 255, 255, 0.1));
+      border: 2px solid #ff00ff;
+    }
+
+    .contact-link {
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: bold;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+      transition: all 0.3s ease;
+      border-bottom: 2px solid rgba(0, 255, 255, 0.5);
+    }
+
+    .contact-link:hover {
+      color: #ff00ff;
+      text-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
+      border-bottom-color: #ff00ff;
+    }
+
+    /* Scanlines effect */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(255, 0, 255, 0.03),
+        rgba(255, 0, 255, 0.03) 1px,
+        transparent 1px,
+        transparent 2px
+      );
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 0, 255, 0.2);
+      color: #888;
+      font-size: 0.9em;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5em;
+      }
+
+      h2 {
+        font-size: 1.4em;
+      }
+
+      .container {
+        padding: 30px 20px;
+      }
+
+      section {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Privacy Policy for FloatPrompt</h1>
-  <p>Last modified: January 28, 2026</p>
+  <div class="container">
+    <header>
+      <h1>FloatPrompt</h1>
+      <div class="divider"></div>
+      <p class="last-modified">Privacy Policy | Last Modified: January 28, 2026</p>
+    </header>
 
-  <h2>1. Introduction</h2>
-  <p>FloatPrompt respects your privacy. This policy explains how we handle your data.</p>
+    <section>
+      <h2>1. Introduction</h2>
+      <p>FloatPrompt respects your privacy. This policy explains how we handle your data and what permissions we require to deliver our service.</p>
+    </section>
 
-  <h2>2. Data Collection</h2>
-  <ul>
-    <li>We do not collect personal data on our servers.</li>
-    <li>Scripts are stored locally on your device.</li>
-    <li>Video recordings are saved locally to your device's Gallery.</li>
-  </ul>
+    <section>
+      <h2>2. Data Collection</h2>
+      <ul>
+        <li>We do not collect personal data on our servers.</li>
+        <li>Scripts are stored locally on your device.</li>
+        <li>Video recordings are saved locally to your device's Gallery.</li>
+      </ul>
+    </section>
 
-  <h2>3. Permissions</h2>
-  <ul>
-    <li>Helper/Overlay: Used to display the script over other apps.</li>
-    <li>Camera/Microphone: Used only when you actively record a video.</li>
-    <li>MediaProjection: Used for screen recording features (optional).</li>
-  </ul>
+    <section>
+      <h2>3. Permissions</h2>
+      <ul>
+        <li><strong>Helper/Overlay:</strong> Used to display the script over other apps.</li>
+        <li><strong>Camera/Microphone:</strong> Used only when you actively record a video.</li>
+        <li><strong>MediaProjection:</strong> Used for screen recording features (optional).</li>
+      </ul>
+    </section>
 
-  <h2>4. Advertising</h2>
-  <p>We use AdMob to display ads. AdMob may collect data for personalized advertising.</p>
+    <section>
+      <h2>4. Advertising</h2>
+      <p>We use AdMob to display ads. AdMob may collect data for personalized advertising in accordance with their privacy practices.</p>
+    </section>
 
-  <h2>5. Contact</h2>
-  <p>For questions, contact: floatprompt@gmail.com</p>
+    <section class="contact-section">
+      <h2>5. Contact</h2>
+      <p>For questions or concerns about this privacy policy, please reach out to us:</p>
+      <p style="margin-top: 20px; font-size: 1.1em;"><a href="mailto:floatprompt@gmail.com" class="contact-link">floatprompt@gmail.com</a></p>
+    </section>
+
+    <footer>
+      <p>© 2026 FloatPrompt. All rights reserved.</p>
+    </footer>
+  </div>
 </body>
 </html>
